@@ -10,6 +10,7 @@ $clear = $_REQUEST['clear'];
 include('./tilep.php');
 
 $tilep = new tilep();
+$tilep->xmlDir = "./data/";
 $tilep->createTile($xml,$zoom,$xtile,$ytile,$type,$clear);
 
 ?>

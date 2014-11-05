@@ -2,6 +2,9 @@
 
 class tilep {
 	
+	public $xmlDir = './'; /* mapnik xml directory */
+	public $pyDir = './'; /* tilep.py directory */
+	
 	public function getLonLat($xtile, $ytile, $zoom)
 	{
 		$n = pow(2, intval($zoom));
@@ -56,7 +59,7 @@ class tilep {
 			 
 			$bbox = $s[0].",".$e[1].",".$e[0].",".$s[1];				
 			
-			shell_exec("python tilep.py -i ".$xml.".xml -o ".$bfile." -b ".$bbox);				
+			shell_exec("python ".$this->pyDir."tilep.py -i ".$this->xmlDir.$xml.".xml -o ".$bfile." -b ".$bbox);				
 			readfile($file);
 		
 		}
