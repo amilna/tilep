@@ -60,6 +60,7 @@ class tilep {
 			$bbox = $s[0].",".$e[1].",".$e[0].",".$s[1];				
 			
 			shell_exec("python ".$this->pyDir."tilep.py -i ".$this->xmlDir.$xml.".xml -o ".$bfile." -b ".$bbox);				
+			//die("python ".$this->pyDir."tilep.py -i ".$this->xmlDir.$xml.".xml -o ".$bfile." -b ".$bbox);
 			readfile($file);
 		
 		}
